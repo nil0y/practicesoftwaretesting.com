@@ -20,7 +20,7 @@ Practice project for learning Playwright automation as part of my **QA Automatio
 - [x] Actions — click, fill, type, press, check, selectOption, hover
 - [x] Assertions — expect, toHaveText, toContainText, soft assertions
 - [x] Hooks & Test Structure — beforeEach, afterEach, describe, test.step
-- [ ] Fixtures — built-in, custom fixtures, scopes
+- [x] Fixtures — built-in, custom fixtures, scopes
 - [ ] Debugging — Inspector, --debug, page.pause(), UI mode
 - [ ] Tracing, Screenshots & Video
 - [ ] Authentication & Storage State
