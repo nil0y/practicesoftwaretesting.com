@@ -31,4 +31,5 @@ Practice project for learning Playwright automation as part of my **QA Automatio
 - [ ] Reports — HTML, list, JSON, JUnit
 - [ ] Visual Testing — toHaveScreenshot, masking, thresholds
 - [ ] Component Testing (overview)
+- [ ] Page Object Model (POM) — pages/ folder structure, reusable page classes
 - [ ] Performance Tips & Best Practices
