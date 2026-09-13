@@ -21,7 +21,7 @@ Practice project for learning Playwright automation as part of my **QA Automatio
 - [x] Assertions — expect, toHaveText, toContainText, soft assertions
 - [x] Hooks & Test Structure — beforeEach, afterEach, describe, test.step
 - [x] Fixtures — built-in, custom fixtures, scopes
-- [ ] Debugging — Inspector, --debug, page.pause(), UI mode
+- [x] Debugging — Inspector, --debug, page.pause(), UI mode
 - [ ] Tracing, Screenshots & Video
 - [ ] Authentication & Storage State
 - [ ] Network — waiting for responses, route interception, mocking APIs
