@@ -80,7 +80,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Fixtures
 - [x] Debugging
 - [x] Tracing, Screenshots & Video
-- [ ] Authentication & Storage State
+- [x] Authentication & Storage State
 - [ ] Network
 - [ ] API Testing in Playwright
 - [ ] Parallelism, Retries & Timeouts
