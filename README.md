@@ -79,7 +79,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Hooks & Test Structure
 - [x] Fixtures
 - [x] Debugging
-- [ ] Tracing, Screenshots & Video
+- [x] Tracing, Screenshots & Video
 - [ ] Authentication & Storage State
 - [ ] Network
 - [ ] API Testing in Playwright
