@@ -82,7 +82,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Tracing, Screenshots & Video
 - [x] Authentication & Storage State
 - [x] Network
-- [ ] API Testing in Playwright
+- [x] API Testing in Playwright
 - [ ] Parallelism, Retries & Timeouts
 - [ ] Projects & Cross-Browser
 - [ ] Reports
