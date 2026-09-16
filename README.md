@@ -6,9 +6,10 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 ## Tech Stack
 - Playwright
 - JavaScript
+- TypeScript
 
 ## Site Under Test
-[practicesoftwaretesting.com](https://practicesoftwaretesting.com/)
+🔗 [practicesoftwaretesting.com](https://practicesoftwaretesting.com/)
 
 ---
 
