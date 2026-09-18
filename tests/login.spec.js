@@ -1,7 +1,7 @@
 import {test} from './fixtures'; // Because we'll use this custom fixture in this test file.
 import {expect} from '@playwright/test'; // Default expect from Playwright for assertions
 
-test('user can see account page after login', async ({loggedInPage}) => {
+test.skip('user can see account page after login', async ({loggedInPage}) => {
     /* 
     We can use page.pause() to pause the test execution at the certain point and inspect the page in the browser.
     

@@ -9,6 +9,8 @@ export const test = base.extend({
         await page.getByPlaceholder('Your password').fill('welcome01');
         await page.getByRole('button', {name: 'Login'}).click();
 
+        await page.waitForURL(/account/); // Wait for this URL to appear
+
         await use(page); // Fixture is now ready to use in tests
     } 
     /*this is also an object literal, so we can add more fixtures here in future if we want to.
