@@ -26,7 +26,13 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  timeout: 30000, // Test timeout
+  expect: {
+    timeout: 5000, // Assertion timeout
+  },
+
   use: {
+    actionTimeout: 10000, // Each action timeout
     testIdAttribute: 'data-test',
     trace: 'on-first-retry', // enables trace collection on first retry of each test.
     screenshot: 'only-on-failure', // captures screenshot on failure

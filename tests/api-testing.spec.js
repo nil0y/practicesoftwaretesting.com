@@ -45,6 +45,7 @@ test('UI & API mixing, both check', async ({page, request}) => {
 
     // Then verify from the UI
     await page.goto('https://practicesoftwaretesting.com/');
+    await page.waitForLoadState('networkidle'); // Wait for the page to load completely.
     await page.getByRole('textbox', {name: 'Search'}).fill('bolt');
     await page.getByRole('button', {name: 'Search'}).click();
     await expect(page.getByTestId('search-result-count')).toContainText(`${body.total} products found`);
