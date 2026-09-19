@@ -86,7 +86,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] API Testing in Playwright
 - [x] Parallelism, Retries & Timeouts
 - [x] Projects & Cross-Browser
-- [ ] Reports
+- [x] Reports
 - [ ] Visual Testing
 - [ ] Component Testing (overview)
 - [ ] Performance Tips & Best Practices
