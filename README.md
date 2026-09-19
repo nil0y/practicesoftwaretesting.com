@@ -87,7 +87,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Parallelism, Retries & Timeouts
 - [x] Projects & Cross-Browser
 - [x] Reports
-- [ ] Visual Testing
+- [x] Visual Testing
 - [ ] Component Testing (overview)
 - [ ] Performance Tips & Best Practices
 
