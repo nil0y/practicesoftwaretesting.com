@@ -92,7 +92,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Performance Tips & Best Practices
 
 ### 🔄 Phase 6 — Building Automation Frameworks *(In Progress)*
-- [ ] Why Frameworks Exist
+- [x] Why Frameworks Exist
 - [ ] Page Object Model I
 - [ ] Page Object Model II
 - [ ] POM with Fixtures
