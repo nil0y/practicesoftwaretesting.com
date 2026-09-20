@@ -1,15 +1,16 @@
  // Importing default test as base to extend it with custom fixtures
-import {test as base} from '@playwright/test';
+import {test as base, expect} from '@playwright/test';
+import { LoginPage } from '../pages/LoginPage';
 
 //We are creating custom fixture for login & will be using loggedInPage instead of page in our tests.
 export const test = base.extend({
     loggedInPage: async ({page}, use) => {
-        await page.goto('https://practicesoftwaretesting.com/auth/login');
-        await page.getByPlaceholder('Your email').fill('customer@practicesoftwaretesting.com');
-        await page.getByPlaceholder('Your password').fill('welcome01');
-        await page.getByRole('button', {name: 'Login'}).click();
+        
+        const loginPage = new LoginPage(page); // Created object of the LoginPage class
+        await loginPage.goto(); //called goto func
+        await loginPage.login('customer@practicesoftwaretesting.com', 'welcome01'); // called login func with param
 
-        await page.waitForURL(/account/); // Wait for this URL to appear
+        await expect(page).toHaveURL(/account/); // verify that we are on the correct page after logging in
 
         await use(page); // Fixture is now ready to use in tests
     } 

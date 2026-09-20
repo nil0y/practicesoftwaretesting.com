@@ -1,14 +1,16 @@
 import {test, expect} from '@playwright/test';
+import { HomePage } from '../pages/HomePage';
+// import { LoginPage } from '../pages/LoginPage';
 
 test.describe('Product Tests', () => {
+    let homepage; // declaring a variable
     test.beforeEach(async ({page}) => {
-        await page.goto('https://practicesoftwaretesting.com/');
+        homepage = new HomePage(page); // creating object of HomePage into homepage variable
+        await homepage.goto();
     });
 
     test('Search for a product', async ({page}) => {
-        await page.getByRole('textbox', {name: 'Search'}).fill('Bolt');
-        await page.getByRole('button', {name: 'Search'}).click();
-        await expect(page.getByTestId('search-result-count')).toContainText('products found');
+        await homepage.search('bolt'); 
     });
 
     test('Search button visibility', async ({page}) => {
@@ -23,8 +25,7 @@ test.describe('Product Tests', () => {
     // Adding test steps for better reporting
     test('checkout steps', async ({page}) => {
         await test.step('Search product', async () => {
-            await page.getByRole('textbox', {name: 'Search'}).fill('Bolt');
-            await page.getByRole('button', {name: 'Search'}).click();
+            await homepage.search('bolt');
         });
         
         await test.step('Select product', async () => {
