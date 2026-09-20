@@ -69,7 +69,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] GitHub & Pull Requests
 - [x] Professional Workflows
 
-### 🔄 Phase 5 — Playwright *(In Progress)*
+### ✅ Phase 5 — Playwright
 - [x] Installation & Project Structure
 - [x] Playwright Architecture
 - [x] Configuration
@@ -88,10 +88,10 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Projects & Cross-Browser
 - [x] Reports
 - [x] Visual Testing
-- [ ] Component Testing (overview)
-- [ ] Performance Tips & Best Practices
+- [x] Component Testing (overview)
+- [x] Performance Tips & Best Practices
 
-### ⏳ Phase 6 — Building Automation Frameworks
+### 🔄 Phase 6 — Building Automation Frameworks *(In Progress)*
 - [ ] Why Frameworks Exist
 - [ ] Page Object Model I
 - [ ] Page Object Model II

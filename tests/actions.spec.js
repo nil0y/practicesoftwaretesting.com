@@ -22,7 +22,7 @@ test ('keyboard press', async ({page}) => {
 
 // Checking items from a checkbox list
 test('checkbox', async ({page}) => {
-    await page.goto('https:practicesoftwaretesting.com/');
+    await page.goto('https://practicesoftwaretesting.com/');
     await page.getByLabel('Hammer').check();
 });
 
