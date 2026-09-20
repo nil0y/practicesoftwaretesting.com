@@ -25,6 +25,7 @@ test('homepage visual test', async ({ page }) => {
 });
 */
 
+// This test is set to fail intentionally
 test('visual regression test', async ({ page }) => {
     await page.goto('https://practicesoftwaretesting.com');
 
