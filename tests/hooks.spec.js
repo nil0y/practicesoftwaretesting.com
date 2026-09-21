@@ -19,7 +19,7 @@ test.describe('Product Tests', () => {
 
     // Adding afterEach hook to log test completion
     test.afterEach(async ({page}) => {
-        console.log('Test completed');
+        console.log('Test completed. afterEach working.');
     });
 
     // Adding test steps for better reporting

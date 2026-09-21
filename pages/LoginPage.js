@@ -1,6 +1,9 @@
 export class LoginPage {
     constructor(page) {
         this.page = page;
+        this.userEmail = page.getByPlaceholder('Your email');
+        this.userPassword = page.getByPlaceholder('Your password');
+        this.loginButton = page.getByRole('button', {name: 'Login'});
     }
 
     async goto() {
@@ -8,8 +11,8 @@ export class LoginPage {
     }
 
     async login(email, password) {
-        await this.page.getByPlaceholder('Your email').fill(email);
-        await this.page.getByPlaceholder('Your password').fill(password);
-        await this.page.getByRole('button', {name: 'Login'}).click();
+        await this.userEmail.fill(email);
+        await this.userPassword.fill(password);
+        await this.loginButton.click();
     }
 }

@@ -1,39 +1,43 @@
 import {test, expect} from '@playwright/test';
+import { HomePage } from '../pages/HomePage';
 
-// Clicking on an element
-test('click', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.locator('.card').first().click();
-});
+test.describe('Actions', () => {
+    let homepage;
 
-// Fill and type
-test('fill and type', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.getByRole('textbox', {name: 'Search'}).fill('Pliers');
-    await page.getByRole('button', {name: 'Search'}).click();
-});
+    test.beforeEach(async ({page}) => {
+        homepage = new HomePage(page);
+        await homepage.goto();
+    });
 
-// Keyboard press
-test ('keyboard press', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.getByRole('textbox', {name: 'Search'}).fill('Pliers');
-    await page.getByRole('textbox', {name: 'Search'}).press('Enter');
-});
+    // Clicking on an element
+    test('click', async ({page}) => {
+        await homepage.firstProduct.click();
+    });
 
-// Checking items from a checkbox list
-test('checkbox', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.getByLabel('Hammer').check();
-});
+    // Fill and type
+    test('fill and type', async ({page}) => {
+        await homepage.search('Pliers');
+    });
 
-// Selecting an item from a dropdown list
-test('Dropdown', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.getByLabel('Sort').selectOption('Price (Low - High)');
-});
+    // Keyboard press
+    test ('keyboard press', async ({page}) => {
+        
+        await homepage.searchInput.fill('Pliers');
+        await homepage.searchInput.press('Enter');
+    });
 
-// Hovering over an element
-test('hover', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.locator('.card').first().hover();
+    // Checking items from a checkbox list
+    test('checkbox', async ({page}) => {
+        await homepage.hammerCheckbox.check();
+    });
+
+    // Selecting an item from a dropdown list
+    test('Dropdown', async ({page}) => {
+        await homepage.sortDropdown.selectOption('Price (Low - High)');
+    });
+
+    // Hovering over an element
+    test('hover', async ({page}) => {
+        await homepage.firstProduct.hover();
+    });
 });
