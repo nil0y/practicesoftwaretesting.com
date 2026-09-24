@@ -1,43 +1,37 @@
-import {test, expect} from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
+import {expect} from '@playwright/test';
+import {test} from './fixtures';
 
 test.describe('Actions', () => {
-    let homepage;
-
-    test.beforeEach(async ({page}) => {
-        homepage = new HomePage(page);
-        await homepage.goto();
-    });
 
     // Clicking on an element
-    test('click', async ({page}) => {
-        await homepage.firstProduct.click();
+    test('click', async ({homePage}) => {
+        await homePage.firstProduct.click();
     });
 
     // Fill and type
-    test('fill and type', async ({page}) => {
-        await homepage.search('Pliers');
+    test('fill and type', async ({homePage}) => {
+        await homePage.search('Pliers');
     });
 
     // Keyboard press
-    test ('keyboard press', async ({page}) => {
+    test ('keyboard press', async ({homePage}) => {
         
-        await homepage.searchInput.fill('Pliers');
-        await homepage.searchInput.press('Enter');
+        await homePage.searchInput.fill('Pliers');
+        await homePage.searchInput.press('Enter');
     });
 
     // Checking items from a checkbox list
-    test('checkbox', async ({page}) => {
-        await homepage.hammerCheckbox.check();
+    test('checkbox', async ({homePage}) => {
+        await homePage.hammerCheckbox.check();
     });
 
     // Selecting an item from a dropdown list
-    test('Dropdown', async ({page}) => {
-        await homepage.sortDropdown.selectOption('Price (Low - High)');
+    test('Dropdown', async ({homePage}) => {
+        await homePage.sortDropdown.selectOption('Price (Low - High)');
     });
 
     // Hovering over an element
-    test('hover', async ({page}) => {
-        await homepage.firstProduct.hover();
+    test('hover', async ({homePage}) => {
+        await homePage.firstProduct.hover();
     });
 });

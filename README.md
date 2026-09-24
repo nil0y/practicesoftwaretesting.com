@@ -95,7 +95,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Why Frameworks Exist
 - [x] Page Object Model I
 - [x] Page Object Model II
-- [ ] POM with Fixtures
+- [x] POM with Fixtures
 - [ ] Utilities & Helpers
 - [ ] Constants & Test Data
 - [ ] Environment & Config Management

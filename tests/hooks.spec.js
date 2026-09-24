@@ -1,39 +1,33 @@
-import {test, expect} from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-// import { LoginPage } from '../pages/LoginPage';
+import {test} from './fixtures'; // Importing from fixtures
+import { expect} from '@playwright/test';
 
 test.describe('Product Tests', () => {
-    let homepage; // declaring a variable
-    test.beforeEach(async ({page}) => {
-        homepage = new HomePage(page); // creating object of HomePage into homepage variable
-        await homepage.goto();
+
+    test('Search for a product', async ({homePage}) => {
+        await homePage.search('bolt'); 
     });
 
-    test('Search for a product', async ({page}) => {
-        await homepage.search('bolt'); 
+    test('Search button visibility', async ({homePage}) => {
+        await expect(homePage.searchButton).toBeVisible();
     });
 
-    test('Search button visibility', async ({page}) => {
-        await expect(page.getByRole('button', {name: 'Search'})).toBeVisible();
+    // Adding test steps for better reporting
+    test('checkout steps', async ({homePage}) => {
+        await test.step('Search product', async () => {
+            await homePage.search('bolt');
+        });
+
+        await test.step('verify product search', async () => {
+            await expect(homePage.searchResult).toBeVisible();
+        });
+        
+        await test.step('Select product', async () => {
+            await homePage.firstProduct.click();
+        });
     });
 
     // Adding afterEach hook to log test completion
     test.afterEach(async ({page}) => {
         console.log('Test completed. afterEach working.');
-    });
-
-    // Adding test steps for better reporting
-    test('checkout steps', async ({page}) => {
-        await test.step('Search product', async () => {
-            await homepage.search('bolt');
-        });
-        
-        await test.step('Select product', async () => {
-            await page.getByText('Bolt').first().click();
-        });
-
-        await test.step('verify product search', async () => {
-            await expect(page.getByTestId('search-result-count')).toBeVisible();
-        });
     });
 });

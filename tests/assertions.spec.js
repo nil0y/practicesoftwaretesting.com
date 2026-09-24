@@ -1,15 +1,9 @@
-import {test, expect} from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
+import {expect} from '@playwright/test';
+import {test} from './fixtures';
 
 test.describe('Assertion Tests', () => {
-    let homepage;
 
-    test.beforeEach(async({page}) => {
-        homepage = new HomePage(page);
-        await homepage.goto();
-    });
-
-    test('assertions-toHaveTitle', async ({page}) => {
+    test('assertions-toHaveTitle', async ({homePage, page}) => {
         /* We will use regex to check the title. 
         This will prevent the test from failing if the title changes in the future.
         */
@@ -22,31 +16,31 @@ test.describe('Assertion Tests', () => {
         await expect(page).toHaveURL('https://practicesoftwaretesting.com/');
     });
 
-    test('assertions-toBeVisible', async ({page}) => {
-        await expect(homepage.searchButton).toBeVisible();
+    test('assertions-toBeVisible', async ({homePage}) => {
+        await expect(homePage.searchButton).toBeVisible();
     });
 
-    test('assertions-toHaveText and toContainText', async ({page}) => {
-        await homepage.searchInput.fill('Bolt');
-        await homepage.searchButton.click();
+    test('assertions-toHaveText and toContainText', async ({homePage}) => {
+        await homePage.searchInput.fill('Bolt');
+        await homePage.searchButton.click();
 
         /* Search results are not deterministic, so we will use toContainText to check 
         if the search result contains the text 'products found'*/
-        await expect(homepage.searchResult).toContainText('products found');
+        await expect(homePage.searchResult).toContainText('products found');
     });
 
     /*
     Soft assertions allow the test to continue even if an assertion fails. 
     Hard assertions will stop the test execution if an assertion fails.
     */
-    test('soft-assertions', async ({page}) => {
+    test('soft-assertions', async ({homePage, page}) => {
         await expect.soft(page).toHaveTitle(/Practice Software Testing/);
         await expect.soft(page).toHaveURL('https://practicesoftwaretesting.com/'); //this is correct and will pass
         /*
         And this will not fail the test, but will log an error in the report because of soft assertion.
         await expect.soft(page).toHaveURL('wrong-url.com'); 
         */
-        await expect.soft(homepage.searchButton).toBeVisible();
-        await expect.soft(homepage.searchInput).toBeVisible();
+        await expect.soft(homePage.searchButton).toBeVisible();
+        await expect.soft(homePage.searchInput).toBeVisible();
     });
 });

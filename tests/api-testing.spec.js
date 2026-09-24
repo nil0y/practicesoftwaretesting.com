@@ -1,7 +1,7 @@
-import {test, expect} from '@playwright/test';
+import {expect} from '@playwright/test';
+import {test} from './fixtures';
 /*
-    For browser tabs we used {page} before.
-    But for API we will use {request}
+    For API we will use {request}
 */
 test('get all products', async ({request}) => {
     const response = await request.get('https://api.practicesoftwaretesting.com/products'); // Stored the response in a variable
@@ -35,7 +35,7 @@ test('get last page products', async ({ request }) => {
     expect(body.data.length).toBe(5);
 });
 
-test('UI & API mixing, both check', async ({page, request}) => {
+test('UI & API mixing, both check', async ({homePage, page, request}) => {
 
     // First, verify using API that there is at least one product with the name "bolt".
     const response = await request.get('https://api.practicesoftwaretesting.com/products/search?q=bolt');
@@ -44,11 +44,8 @@ test('UI & API mixing, both check', async ({page, request}) => {
     expect(body.data.length).toBeGreaterThan(0); // Making sure product is available
 
     // Then verify from the UI
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.waitForLoadState('networkidle'); // Wait for the page to load completely.
-    await page.getByRole('textbox', {name: 'Search'}).fill('bolt');
-    await page.getByRole('button', {name: 'Search'}).click();
-    await expect(page.getByTestId('search-result-count')).toContainText(`${body.total} products found`);
+    await homePage.search('Bolt');
+    await expect(homePage.searchResult).toContainText(`${body.total} products found`);
     // By using template litarals we can make sure that the data received from API exactly matches UI
 });
 
