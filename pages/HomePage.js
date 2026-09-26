@@ -1,3 +1,4 @@
+    import { BASE_URL } from "../utils/testData";
     export class HomePage {
         constructor (page) {
             this.page = page;
@@ -9,7 +10,7 @@
             this.searchResult = page.getByTestId('search-result-count');
         }
         async goto() {
-            await this.page.goto('https://practicesoftwaretesting.com/');
+            await this.page.goto(BASE_URL);
         }
 
         async search(productName) {

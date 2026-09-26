@@ -2,6 +2,7 @@
 import {test as base} from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { HomePage } from '../pages/HomePage';
+import { credentials } from '../utils/testData';
 
 //We are creating custom fixture for HomePage & login & will be using homePage/loggedInPage instead of page in our tests.
 export const test = base.extend({
@@ -15,7 +16,7 @@ export const test = base.extend({
         
         const loginPage = new LoginPage(page); // Created object of the LoginPage class
         await loginPage.goto(); 
-        await loginPage.login('customer@practicesoftwaretesting.com', 'welcome01'); // called login func with param
+        await loginPage.login(credentials.email, credentials.password); // called login func with param
 
         await use(homePage); // Fixture is now ready to use in tests
     } 

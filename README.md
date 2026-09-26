@@ -96,7 +96,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Page Object Model I
 - [x] Page Object Model II
 - [x] POM with Fixtures
-- [ ] Utilities & Helpers
+- [x] Utilities & Helpers
 - [ ] Constants & Test Data
 - [ ] Environment & Config Management
 - [ ] Clean Code Principles

@@ -1,3 +1,4 @@
+import {LOGIN_URL} from '../utils/testData.js';
 export class LoginPage {
     constructor(page) {
         this.page = page;
@@ -7,7 +8,7 @@ export class LoginPage {
     }
 
     async goto() {
-        await this.page.goto('https://practicesoftwaretesting.com/auth/login');
+        await this.page.goto(LOGIN_URL);
     }
 
     async login(email, password) {
