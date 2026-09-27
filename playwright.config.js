@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+dotenv.config();
 
 /**
  * Read environment variables from file.
@@ -37,11 +39,13 @@ export default defineConfig({
   },
 
   use: {
+    baseURL: process.env.BASE_URL,
     actionTimeout: 10000, // Each action timeout
     testIdAttribute: 'data-test',
     trace: 'on-first-retry', // enables trace collection on first retry of each test.
     screenshot: 'only-on-failure', // captures screenshot on failure
     video: 'retain-on-failure', // stores video only when test fails
+
 },
 
   /* Configure projects for major browsers */

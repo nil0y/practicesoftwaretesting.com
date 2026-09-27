@@ -98,7 +98,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] POM with Fixtures
 - [x] Utilities & Helpers
 - [x] Constants & Test Data
-- [ ] Environment & Config Management
+- [x] Environment & Config Management
 - [ ] Clean Code Principles
 - [ ] SOLID for Test Automation
 - [ ] Design Patterns
