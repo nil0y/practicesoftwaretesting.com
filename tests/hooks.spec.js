@@ -3,25 +3,25 @@ import { expect} from '@playwright/test';
 
 test.describe('Product Tests', () => {
 
-    test('Search for a product', async ({homePage}) => {
+    test('should show results when searching for bolt', async ({homePage}) => {
         await homePage.search('bolt'); 
     });
 
-    test('Search button visibility', async ({homePage}) => {
+    test('should display search button on homepage', async ({homePage}) => {
         await expect(homePage.searchButton).toBeVisible();
     });
 
     // Adding test steps for better reporting
-    test('checkout steps', async ({homePage}) => {
-        await test.step('Search product', async () => {
+    test('should navigate to product page after clicking search result', async ({homePage}) => {
+        await test.step('should show the results when searched(ex. bolt)', async () => {
             await homePage.search('bolt');
         });
 
-        await test.step('verify product search', async () => {
+        await test.step('should show search result when a search is executed', async () => {
             await expect(homePage.searchResult).toBeVisible();
         });
         
-        await test.step('Select product', async () => {
+        await test.step('should show product details when a product card is clicked from search result screen', async () => {
             await homePage.firstProduct.click();
         });
     });
