@@ -100,7 +100,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Constants & Test Data
 - [x] Environment & Config Management
 - [x] Clean Code Principles
-- [ ] SOLID for Test Automation
+- [x] SOLID for Test Automation
 - [ ] Design Patterns
 - [ ] Dependency Injection
 - [ ] BDD & Alternatives
