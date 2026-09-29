@@ -101,8 +101,8 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Environment & Config Management
 - [x] Clean Code Principles
 - [x] SOLID for Test Automation
-- [ ] Design Patterns
-- [ ] Dependency Injection
+- [x] Design Patterns
+- [x] Dependency Injection
 - [ ] BDD & Alternatives
 - [ ] Folder Structure & Architecture
 - [ ] Framework Review Workshop
