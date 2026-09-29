@@ -103,7 +103,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] SOLID for Test Automation
 - [x] Design Patterns
 - [x] Dependency Injection
-- [ ] BDD & Alternatives
+- [x] BDD & Alternatives
 - [ ] Folder Structure & Architecture
 - [ ] Framework Review Workshop
 
