@@ -1,7 +1,7 @@
 // Refactoring the file to use custom fixtures
 // Locators are used in respective Page files.
 import { expect } from '@playwright/test';
-import { test } from './fixtures';
+import {test} from '../fixtures/fixtures';
 
 test.describe('Different locators testing', ()=> {
 

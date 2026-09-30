@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { test } from './fixtures';
+import {test} from '../fixtures/fixtures';
 import { HomePage } from '../pages/HomePage';
 import { PRODUCTS_API } from '../utils/testData';
 

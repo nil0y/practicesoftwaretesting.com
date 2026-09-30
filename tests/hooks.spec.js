@@ -1,4 +1,4 @@
-import {test} from './fixtures'; // Importing from fixtures
+import {test} from '../fixtures/fixtures'; // Importing from fixtures
 import { expect} from '@playwright/test';
 
 test.describe('Product Tests', () => {

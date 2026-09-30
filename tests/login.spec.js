@@ -1,4 +1,4 @@
-import {test} from './fixtures'; // Because we'll use this custom fixture in this test file.
+import {test} from '../fixtures/fixtures'; // Because we'll use this custom fixture in this test file.
 import {expect} from '@playwright/test'; // Default expect from Playwright for assertions
 
 test.skip('user can see account page after login', async ({loggedInPage}) => {

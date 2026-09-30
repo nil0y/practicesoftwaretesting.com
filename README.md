@@ -104,7 +104,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Design Patterns
 - [x] Dependency Injection
 - [x] BDD & Alternatives
-- [ ] Folder Structure & Architecture
+- [x] Folder Structure & Architecture
 - [ ] Framework Review Workshop
 
 ### ⏳ Phase 7 — Advanced Automation
