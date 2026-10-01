@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 
 test('homepage visual test', async ({page}) => {
-    await page.goto('https://practicesoftwaretesting.com/');
+    await page.goto('/');
     await page.waitForSelector('.card'); // wait till products appear
     await expect(page).toHaveScreenshot('homepage.png', {
         maxDiffPixelRatio: 0.01, // 1% difference allow (Threshhold)

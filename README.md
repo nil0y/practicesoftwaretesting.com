@@ -105,7 +105,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Dependency Injection
 - [x] BDD & Alternatives
 - [x] Folder Structure & Architecture
-- [ ] Framework Review Workshop
+- [x] Framework Review Workshop
 
 ### ⏳ Phase 7 — Advanced Automation
 - [ ] REST API Automation I
