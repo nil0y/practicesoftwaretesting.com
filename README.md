@@ -108,7 +108,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Framework Review Workshop
 
 ### 🔄 Phase 7 — Advanced Automation *(In Progress)*
-- [ ] REST API Automation I
+- [x] REST API Automation I
 - [ ] REST API Automation II
 - [ ] Authentication Deep Dive
 - [ ] GraphQL Testing
