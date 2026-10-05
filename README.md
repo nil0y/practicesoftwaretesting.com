@@ -91,7 +91,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Component Testing (overview)
 - [x] Performance Tips & Best Practices
 
-### 🔄 Phase 6 — Building Automation Frameworks *(In Progress)*
+### ✅ Phase 6 — Building Automation Frameworks 
 - [x] Why Frameworks Exist
 - [x] Page Object Model I
 - [x] Page Object Model II
@@ -107,7 +107,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [x] Folder Structure & Architecture
 - [x] Framework Review Workshop
 
-### ⏳ Phase 7 — Advanced Automation
+### 🔄 Phase 7 — Advanced Automation *(In Progress)*
 - [ ] REST API Automation I
 - [ ] REST API Automation II
 - [ ] Authentication Deep Dive

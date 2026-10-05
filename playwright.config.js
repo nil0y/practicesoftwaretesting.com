@@ -16,7 +16,7 @@ dotenv.config();
  */
 export default defineConfig({
   testDir: './',
-  testMatch: ['tests/**/*.spec.js', 'setup/**/*.setup.js'], // Match only spec and setup files for test execution
+  testMatch: ['tests/**/*.spec.js'], // Match only spec and setup files for test execution
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

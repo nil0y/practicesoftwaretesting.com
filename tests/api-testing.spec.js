@@ -4,7 +4,7 @@ import {test} from '../fixtures/fixtures';
     For API we will use {request}
 */
 test('get all products', async ({request}) => {
-    const response = await request.get('https://api.practicesoftwaretesting.com/products'); // Stored the response in a variable
+    const response = await request.get(`${process.env.API_URL}/products`); // Stored the response in a variable
     console.log('Status: ', response.status());
     console.log('OK?: ', response.ok());
 
@@ -28,7 +28,7 @@ test('get all products', async ({request}) => {
 
 test('get last page products', async ({ request }) => {
     // We can also pass the page number query parameter to check data from any specific page.
-    const response = await request.get('https://api.practicesoftwaretesting.com/products?page=6');
+    const response = await request.get(`${process.env.API_URL}/products?page=6`);
     
     expect(response.status()).toBe(200);
     
@@ -39,7 +39,7 @@ test('get last page products', async ({ request }) => {
 test('UI & API mixing, both check', async ({homePage, page, request}) => {
 
     // First, verify using API that there is at least one product with the name "bolt".
-    const response = await request.get('https://api.practicesoftwaretesting.com/products/search?q=bolt');
+    const response = await request.get(`${process.env.API_URL}/products/search?q=bolt`);
     const body = await response.json();
 
     expect(body.data.length).toBeGreaterThan(0); // Making sure product is available
