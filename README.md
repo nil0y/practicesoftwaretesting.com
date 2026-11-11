@@ -110,7 +110,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 ### 🔄 Phase 7 — Advanced Automation *(In Progress)*
 - [x] REST API Automation I
 - [x] REST API Automation II
-- [ ] Authentication Deep Dive
+- [x] Authentication Deep Dive
 - [ ] GraphQL Testing
 - [ ] Database Testing: SQL
 - [ ] NoSQL: MongoDB & Redis

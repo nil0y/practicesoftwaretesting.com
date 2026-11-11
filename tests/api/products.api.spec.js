@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, request as playwrightRequest } from '@playwright/test';
 import { APIClient } from './APIClient.js';
 
 test.describe('Tests for products API', () => {
@@ -73,13 +73,22 @@ test.describe('Tests for products API', () => {
         });
     })
 
-    test.describe.skip('Post Requests', () => {
+    test.describe('Post Requests', () => {
+        let client;
+        let apiContext;
+        
+        test.beforeAll(async () => {
+            apiContext = await playwrightRequest.newContext();
+            client = new APIClient(apiContext);
+            await client.login('admin@practicesoftwaretesting.com', 'welcome01');
+        });
 
-        test('create a new product', async ({ request }) => {
-            const client = new APIClient(request);
-            // Login to get token
-            const loginResponse = await client.login('admin@practicesoftwaretesting.com', 'welcome01');
+        test.afterAll(async () => {
+            await apiContext.dispose();
+        });
 
+        test.skip('create a new product', async () => {
+            
             // Create a new product
             const response = await client.createProduct({
                 name: 'Test Hammer',
@@ -91,6 +100,8 @@ test.describe('Tests for products API', () => {
                 product_image_id: '01M45H8C4ATPRFE9E4Y73K8W92'
             });
             const body = await response.json();
+            console.log('Status: ', response.status());
+            console.log('Body: ', JSON.stringify(body, null, 2));
 
             // Assertions
             expect(response.status()).toBe(201);
@@ -102,8 +113,7 @@ test.describe('Tests for products API', () => {
             expect(deleteResponse.status()).toBe(204);
         });
 
-        test('create a new product without required fields', async ({ request }) => {
-            const client = new APIClient(request);
+        test('create a new product without required fields', async () => {
             const response = await client.createProduct({});
             const body = await response.json();
 
