@@ -41,6 +41,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.BASE_URL,
     actionTimeout: 30000, // Each action timeout
+    navigationTimeout: 30000,
     testIdAttribute: 'data-test',
     trace: 'on-first-retry', // enables trace collection on first retry of each test.
     screenshot: 'only-on-failure', // captures screenshot on failure
