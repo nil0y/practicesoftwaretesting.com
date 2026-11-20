@@ -26,6 +26,13 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
 
+      - name: Check environment variables
+        run: |
+          echo "BASE_URL length: ${#BASE_URL}"
+          echo "Node version: $(node -v)"
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+
       - name: Run Playwright tests
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
@@ -34,7 +41,9 @@ jobs:
           CUSTOMER_PASSWORD: ${{ secrets.CUSTOMER_PASSWORD }}
           ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-        run: npx playwright test --project=chromium
+        run: |
+          echo "BASE_URL length: ${#BASE_URL}"
+          npx playwright test --project=chromium --reporter=list
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
