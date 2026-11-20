@@ -8,7 +8,7 @@
 
         const loginPage = new LoginPage(page); // Created object of the LoginPage class
         await loginPage.goto(); 
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
         await loginPage.login(users.customer.email, users.customer.password);
         
 
