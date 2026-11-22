@@ -1,16 +1,24 @@
-    import {test as setup} from '@playwright/test';
-    import { LoginPage } from '../pages/LoginPage'; // Imported the LoginPage class
-    import { users } from '../utils/credentials'; // user account details are stored here
+    import {test as setup, request } from '@playwright/test';
 
     const authFile = 'playwright/.auth/user.json';
 
-    setup('authenticate', async ({page}) => {
+    setup('authenticate - Login using API', async ({page}) => {
+        const apiContext = await request.newContext();
+        const response = await apiContext.post(`${process.env.API_URL}/users/login`, {
+        data: {
+            email: process.env.CUSTOMER_EMAIL || 'customer@practicesoftwaretesting.com',
+            password: process.env.CUSTOMER_PASSWORD || 'welcome01'
+        }
+    });
 
-        const loginPage = new LoginPage(page); // Created object of the LoginPage class
-        await loginPage.goto(); 
-        await page.waitForLoadState('domcontentloaded');
-        await loginPage.login(users.customer.email, users.customer.password);
-        
+    const responseBody = await response.json();
+    const token = responseBody.access_token;
+    await apiContext.dispose();
+
+    await page.goto(process.env.BASE_URL || 'https://practicesoftwaretesting.com');
+    await page.evaluate((t) => {
+        localStorage.setItem('token', t);
+    }, token);
 
         // Save the authenticated state after login.
         await page.context().storageState({path: authFile});
