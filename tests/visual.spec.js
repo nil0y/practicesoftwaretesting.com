@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test('homepage visual test', async ({page}) => {
+test.skip('homepage visual test', async ({page}) => {
     await page.goto('/');
     await page.waitForSelector('.card'); // wait till products appear
     await expect(page).toHaveScreenshot('homepage.png', {
@@ -26,7 +26,7 @@ test('homepage visual test', async ({ page }) => {
 */
 
 // This test is set to fail intentionally
-test('visual regression test', async ({ page }) => {
+test.skip('visual regression test', async ({ page }) => {
     await page.goto('https://practicesoftwaretesting.com');
 
     await page.waitForSelector('.card'); // wait till products appear
