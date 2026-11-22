@@ -124,7 +124,7 @@ Hands-on automation project built as part of the **QA Automation Mastery** curri
 - [ ] Security Testing Basics
 
 ### ⏳ Phase 8 — CI/CD
-- [ ] CI/CD Concepts
+- [x] CI/CD Concepts
 - [ ] GitHub Actions I
 - [ ] GitHub Actions II
 - [ ] Parallel Jobs & Sharding
